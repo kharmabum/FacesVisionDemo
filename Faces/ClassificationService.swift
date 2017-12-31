@@ -2,35 +2,30 @@ import CoreML
 import Vision
 import VisionLab
 
-/// Delegate protocol used for `ClassificationService`
-protocol ClassificationServiceDelegate: class {
-  func classificationService(_ service: ClassificationService, didDetectGender gender: String)
-  func classificationService(_ service: ClassificationService, didDetectAge age: String)
-  func classificationService(_ service: ClassificationService, didDetectEmotion emotion: String)
-}
-
 /// Service used to perform gender, age and emotion classification
 final class ClassificationService: ClassificationServiceProtocol {
+  
   /// The service's delegate
   weak var delegate: ClassificationServiceDelegate?
-  /// Array of vision requests
-  private var requests = [VNRequest]()
+
+  /// Array of models
+  private var models = [VNRequest]()
 
   /// Create CoreML model and classification requests
   func setup() {
     do {
       // Gender request
-      requests.append(VNCoreMLRequest(
+      models.append(VNCoreMLRequest(
         model: try VNCoreMLModel(for: GenderNet().model),
         completionHandler: handleGenderClassification
       ))
       // Age request
-      requests.append(VNCoreMLRequest(
+      models.append(VNCoreMLRequest(
         model: try VNCoreMLModel(for: AgeNet().model),
         completionHandler: handleAgeClassification
       ))
       // Emotions request
-      requests.append(VNCoreMLRequest(
+      models.append(VNCoreMLRequest(
         model: try VNCoreMLModel(for: CNNEmotions().model),
         completionHandler: handleEmotionClassification
       ))
@@ -41,13 +36,9 @@ final class ClassificationService: ClassificationServiceProtocol {
 
   /// Run individual requests one by one.
   func classify(image: CIImage) {
-    do {
-      for request in self.requests {
-        let handler = VNImageRequestHandler(ciImage: image)
-        try handler.perform([request])
-      }
-    } catch {
-      print(error)
+    for model in self.models {
+        let request = VNImageRequestHandler(ciImage: image)
+        _ = try? request.perform([model])
     }
   }
 

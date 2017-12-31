@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EFF99C41FD51610006FA468 /* UIViewController-Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF99C31FD51610006FA468 /* UIViewController-Label.swift */; };
+		3EFF99C61FD5180F006FA468 /* ClassificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF99C51FD5180F006FA468 /* ClassificationServiceProtocol.swift */; };
 		D3D02D1E27F921CA4F2560A7 /* Pods_Faces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17C981B6486AA47385EAC2D /* Pods_Faces.framework */; };
 		D50B13FE1EFC980E0049A04B /* GenderNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D50B13FD1EFC97F20049A04B /* GenderNet.mlmodel */; };
 		D50B14001EFC981B0049A04B /* AgeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D50B13FF1EFC98190049A04B /* AgeNet.mlmodel */; };
@@ -32,6 +34,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3EFF99C31FD51610006FA468 /* UIViewController-Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Label.swift"; sourceTree = "<group>"; };
+		3EFF99C51FD5180F006FA468 /* ClassificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationServiceProtocol.swift; sourceTree = "<group>"; };
 		56B4141162F0B3857C785841 /* Pods-Faces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Faces.release.xcconfig"; path = "Pods/Target Support Files/Pods-Faces/Pods-Faces.release.xcconfig"; sourceTree = "<group>"; };
 		933C9CB45BEDBEF9A0B10DB8 /* Pods-Faces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Faces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Faces/Pods-Faces.debug.xcconfig"; sourceTree = "<group>"; };
 		D50B13FD1EFC97F20049A04B /* GenderNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderNet.mlmodel; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EFF99C21FD515E9006FA468 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3EFF99C51FD5180F006FA468 /* ClassificationServiceProtocol.swift */,
+				3EFF99C31FD51610006FA468 /* UIViewController-Label.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		70750F74172FF47CA8368154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,10 +110,11 @@
 		D51750081EFB327C000D98EB /* Faces */ = {
 			isa = PBXGroup;
 			children = (
-				D517501B1EFB3282000D98EB /* Resources */,
 				D51750091EFB327C000D98EB /* AppDelegate.swift */,
 				D517500B1EFB327C000D98EB /* ViewController.swift */,
 				D5D4DFC61EFB3A84005EBAA6 /* ClassificationService.swift */,
+				D517501B1EFB3282000D98EB /* Resources */,
+				3EFF99C21FD515E9006FA468 /* Utilities */,
 			);
 			path = Faces;
 			sourceTree = "<group>";
@@ -251,6 +265,8 @@
 				D5D4DFC71EFB3A84005EBAA6 /* ClassificationService.swift in Sources */,
 				D50B14001EFC981B0049A04B /* AgeNet.mlmodel in Sources */,
 				D50B13FE1EFC980E0049A04B /* GenderNet.mlmodel in Sources */,
+				3EFF99C41FD51610006FA468 /* UIViewController-Label.swift in Sources */,
+				3EFF99C61FD5180F006FA468 /* ClassificationServiceProtocol.swift in Sources */,
 				D517500C1EFB327C000D98EB /* ViewController.swift in Sources */,
 				D517500A1EFB327C000D98EB /* AppDelegate.swift in Sources */,
 			);
